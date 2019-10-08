@@ -5,6 +5,16 @@ const server = express();
 
 server.use(express.static("public"));
 
+/*=== API endpoints go here ===*/
+
+server.get("/api", (req, res) => {
+  res.status(200).json({
+    message: "Hello world"
+  });
+});
+
+/*=== sends client endpoints to React Router routes in client/routes/Routes ===*/
+
 server.get("*", (req, res) => {
   res.send(renderer(req));
 });

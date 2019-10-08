@@ -96,6 +96,16 @@ var server = (0, _express2.default)();
 
 server.use(_express2.default.static("public"));
 
+/*=== API endpoints go here ===*/
+
+server.get("/api", function (req, res) {
+  res.status(200).json({
+    message: "Hello world"
+  });
+});
+
+/*=== sends client endpoints to React Router routes in client/routes/Routes ===*/
+
 server.get("*", function (req, res) {
   res.send((0, _renderer2.default)(req));
 });
