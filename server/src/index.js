@@ -5,8 +5,8 @@ const server = express();
 
 server.use(express.static("public"));
 
-server.get("/", (req, res) => {
-  res.send(renderer());
+server.get("*", (req, res) => {
+  res.send(renderer(req));
 });
 
 const PORT = 3000 || process.env.PORT;
