@@ -14,7 +14,7 @@
 npm install
 ```
 
-## Install
+## Run
 
 ```sh
 npm run dev
