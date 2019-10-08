@@ -1,28 +1,12 @@
 import express from "express";
-import React from "react";
-import { renderToString } from "react-dom/server";
-
-import App from "./client/components/App";
+import renderer from "./helpers/renderer";
 
 const server = express();
 
 server.use(express.static("public"));
 
 server.get("/", (req, res) => {
-  const content = renderToString(<App />);
-
-  const html = `
-    <html>
-      <head>
-        <body>
-          <div id="root">${content}</div>
-          <script src="bundle.js"></script>
-        </body>
-      </head>
-    </html>
-  `;
-
-  res.send(html);
+  res.send(renderer());
 });
 
 const PORT = 3000 || process.env.PORT;

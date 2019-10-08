@@ -14,6 +14,12 @@
 npm install
 ```
 
+## Install
+
+```sh
+npm run dev
+```
+
 ## Run tests
 
 ```sh
