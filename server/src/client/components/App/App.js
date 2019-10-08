@@ -3,7 +3,8 @@ import React from "react";
 const Example = () => {
   return (
     <div>
-      <h1>I am an Example Component!</h1>
+      <div>I am an Example Component!</div>
+      <button onClick={() => console.log("why")}>Press me!</button>
     </div>
   );
 };

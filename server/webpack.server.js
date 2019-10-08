@@ -13,7 +13,6 @@ module.exports = {
   },
 
   /*=== tell webpack to run babel on every file it runs through ===*/
-
   module: {
     rules: [
       {
