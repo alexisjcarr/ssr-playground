@@ -4,7 +4,7 @@
   "description": "Server side rendering template",
   "main": "index.js",
   "scripts": {
-    "start": "node bundle.js",
+    "start": "concurrently \"node build/bundle.js\" \"node public/bundle.js\"",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:build-server": "webpack --config webpack.server.js --watch",
@@ -27,6 +27,7 @@
     "compression": "^1.7.4",
     "concurrently": "3.5.0",
     "cypress": "^3.4.1",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-http-proxy": "1.0.6",
     "lodash": "4.17.13",
